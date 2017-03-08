@@ -1,0 +1,13 @@
+<h1>Others</h1>
+
+<h1>{{viewUser.name}}</h1>
+
+<table>
+  <tr ng-repeat="bucket in viewUser.buckets">
+    <td><input type="checkbox" ng-checked="bucket.done" ng-click="checkBucket(bucket._id)"><td>
+    <td ng-cloak>{{bucket._user.name}} |</td>
+    <td ng-cloak>{{bucket.title}}</td>
+    <td ng-cloak>{{bucket.description}}</td>
+    <td ng-cloak>{{bucket.createdAt}}</td>
+  </tr>
+</table>

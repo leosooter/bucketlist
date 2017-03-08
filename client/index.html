@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Bucket List</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="/js/angular/angular.js" charset="utf-8"></script>
+    <script src="/js/angular-route/angular-route.js" charset="utf-8"></script>
+
+    <script src="/app/app.js" charset="utf-8"></script>
+    <!-- Services -->
+    <script src="/app/services/tokenService.js" charset="utf-8"></script>
+    <!-- Factories -->
+    <script src="/app/factories/tokenInterceptor.js" charset="utf-8"></script>
+    <script src="/app/factories/userFactory.js" charset="utf-8"></script>
+    <script src="/app/factories/bucketFactory.js" charset="utf-8"></script>
+
+    <!-- Controllers -->
+    <script src="/app/controllers/loginController.js" charset="utf-8"></script>
+    <script src="/app/controllers/mainController.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+    <div ng-view="">
+      <!-- Patrials -->
+    </div>
+  </body>
+</html>

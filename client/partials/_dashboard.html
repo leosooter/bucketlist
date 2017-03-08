@@ -1,0 +1,30 @@
+<header>
+  <a href="#!dashboard">Home</a>
+  <a href="#!others">View Others</a>
+  <button type="button" ng-click="logout()">Logout</button>
+</header>
+<h1>Welcome {{currentUser.name}}</h1>
+
+<h5>Add a new item to your Bucket-List</h5>
+<form ng-submit="addBucket()">
+  <input type="text" placeholder="Title" ng-model="newBucket.bucket.title">
+  <input type="text" placeholder="Description" ng-model="newBucket.bucket.description">
+  <select ng-model="newBucket.otherUserId">
+    <option value="{{user._id}}" ng-repeat="user in users | filter:{ _id : '!' + currentUser._id }">{{user.name}}</option>
+  </select>
+  <input type="submit" value="Add to List">
+</form>
+
+<h3>Before I die I want to:</h3>
+<table>
+  <tr ng-repeat="bucket in currentUser.buckets">
+    <td><input type="checkbox" ng-checked="bucket.done" ng-click="checkBucket(bucket._id)"><td>
+    <td ng-cloak>{{bucket._user.name}} |</td>
+    <td ng-cloak>{{bucket.title}}</td>
+    <td ng-cloak>{{bucket.description}}</td>
+    <td ng-cloak>{{bucket.createdAt}}</td>
+  </tr>
+</table>
+
+<h3>See Other User's Lists</h3>
+<button type="button" ng-click="viewOther(user._id)" ng-repeat="user in users | filter:{ _id : '!' + currentUser._id }">{{user.name}}</button>

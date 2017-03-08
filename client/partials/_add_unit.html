@@ -1,0 +1,9 @@
+<h1>Add Unit</h1>
+
+<form ng-submit="addUnit()">
+  <input type="text" placeholder="Unit Name" ng-model="newUnit.name">
+  <input type="number" placeholder="Unit Price" ng-model="newUnit.price">
+  <label>Unit Info</label>
+  <textarea rows="8" cols="80" ng-model="newUnit.info"></textarea>
+  <input type="submit" value="Add Unit">
+</form>
